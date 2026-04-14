@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GE ENGINEERING | A Complete Green Power Solution Provider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ge-green: #1b5e20;
+            --ge-light-green: #e8f5e9;
+            --ge-accent: #2e7d32;
+            --text-gray: #333;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* General Text Font */
+            color: var(--text-gray);
+            background-color: #fcfcfc;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--ge-green); }
+        
+        .btn { font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-icon { width: 55px; height: 55px; border-radius: 5px; }
+
+        nav ul { display: flex; list-style: none; gap: 25px; margin: 0; }
+        nav ul li a { text-decoration: none; color: var(--ge-green); font-weight: 600; font-size: 0.9rem; }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .quote { font-family: 'Lato', sans-serif; font-style: italic; font-size: 1.5rem; border-left: 4px solid var(--ge-accent); padding-left: 15px; margin-bottom: 10px; }
+
+        /* --- TABS SYSTEM --- */
+        .tabs-container { padding: 60px 8%; }
+        .tab-menu { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; border-bottom: 2px solid var(--ge-light-green); }
+        .tab-btn { 
+            padding: 15px 30px; border: none; background: none; cursor: pointer; 
+            font-weight: 700; color: var(--ge-green); border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active { border-bottom-color: var(--ge-green); background: var(--ge-light-green); }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        /* --- LISTINGS LAYOUT --- */
+        .product-row { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .product-row:nth-child(even) { flex-direction: row-reverse; }
+        .product-img { width: 45%; border-radius: 8px; }
+        .product-text { width: 55%; }
+
+        /* --- STAFF LAYOUT --- */
+        .staff-card { display: flex; align-items: center; gap: 30px; background: var(--ge-light-green); padding: 30px; border-radius: 15px; margin-bottom: 30px; }
+        .staff-img { width: 200px; height: 200px; border-radius: 10px; object-fit: cover; }
+
+        /* --- FOOTER & CONTACT --- */
+        footer { background: #1a1a1a; color: white; padding: 60px 8%; margin-top: 50px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .abb-partner { color: #ff0000; font-weight: 800; font-size: 1.2rem; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @media (max-width: 768px) {
+            .product-row, .staff-card { flex-direction: column !important; text-align: center; }
+            .product-img, .product-text { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+            <img src="your-logo.png" alt="GE ENGINEERING ICON" class="logo-icon">
+            <div style="line-height: 1;">
+                <span style="font-size: 1.4rem; font-weight: 800; color: var(--ge-green);">GE ENGINEERING</span><br>
+                <small style="color: #666;">Established Since 2012</small>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="javascript:void(0)" onclick="openTab(event, 'Solutions')">Solutions</a></li>
+            <li><a href="javascript:void(0)" onclick="openTab(event, 'Team')">Leadership</a></li>
+            <li><a href="javascript:void(0)" onclick="openTab(event, 'Work')">Work With Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <p class="quote">"A Complete Green Solution Provider"</p>
+        <h1 style="color: white; font-size: 3.5rem; margin: 0;">GE ENGINEERING</h1>
+        <p>Your Strategic Partner for Power & Infrastructure in Bangladesh</p>
+    </header>
+
+    <div class="tabs-container">
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="openTab(event, 'Solutions')">What We Provide</button>
+            <button class="tab-btn" onclick="openTab(event, 'Team')">Our Leadership</button>
+            <button class="tab-btn" onclick="openTab(event, 'Work')">Working with GE ENGINEERING</button>
+        </div>
+
+        <div id="Solutions" class="tab-content active">
+            <div class="product-row">
+                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="Generator" class="product-img">
+                <div class="product-text">
+                    <h2>Heavy Duty Power Solutions</h2>
+                    <p><strong>European Brand Heavy Duty Generators:</strong> High-performance Diesel and Gas powered units for industrial reliability.</p>
+                    <p><strong>Rental Power:</strong> Short and long-term rental for Generators, Sub-Stations, and Construction Equipment.</p>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Solar" class="product-img">
+                <div class="product-text">
+                    <h2>Sustainable Engineering</h2>
+                    <p><strong>Solar Systems:</strong> Off-Grid, On-Grid, Hybrid, and Net Metering solutions for sustainable energy.</p>
+                    <p><strong>Lightning Protection System:</strong> Authorised partner for ABB-France technical installations.</p>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="product-text">
+                    <h2>Electrical Infrastructure</h2>
+                    <ul>
+                        <li>Sub-Stations (Dry & Oil Type)</li>
+                        <li>High Tension (HT) & Low Tension (LT) Panels</li>
+                        <li>Synchronising Panels, Main Distribution Boards (MDB), Sub Distribution Boards (SDB)</li>
+                        <li>Low Voltage, Medium Voltage & High Voltage Equipment (ABB / SIEMENS / Schneider)</li>
+                    </ul>
+                </div>
+                <div class="product-text" style="background: var(--ge-light-green); padding: 20px; border-radius: 10px;">
+                    <h2>Building Services</h2>
+                    <p><strong>Elevators & Escalators:</strong> Premium imports from Japan, Italy, and PRC.</p>
+                    <p><strong>Protection Systems:</strong> Fire Detection, Protection, and Hydrant Systems.</p>
+                    <p><strong>Power Quality:</strong> Online Uninterruptible Power Supply (UPS), Automatic Voltage Regulator (AVR), and Air Conditioning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="Team" class="tab-content">
+            <div class="staff-card">
+                <img src="https://images.unsplash.com/photo-1590483734724-383b85ad9390?auto=format&fit=crop&w=600&q=80" alt="Diesel Generator" class="staff-img">
+                <div class="staff-info">
+                    <h3>Md. Monirul Islam (Shehab)</h3>
+                    <p><strong>Managing Partner & CEO</strong></p>
+                    <p><em>Bachelor of Science, Engineer (Mechanical Engineering), CUET</em></p>
+                    <p style="color: var(--ge-accent); font-weight: bold;">Direct: +8801710-935505</p>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <img src="https://images.unsplash.com/photo-1621905235858-450386e6ce50?auto=format&fit=crop&w=600&q=80" alt="Industrial Gen" class="staff-img">
+                <div class="staff-info">
+                    <h3>Nayeem Hossain</h3>
+                    <p><strong>Manager</strong></p>
+                    <p>Operations and Client Relationship Lead</p>
+                    <p style="color: var(--ge-accent); font-weight: bold;">Direct: +880 1729-363580</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="Work" class="tab-content">
+            <div style="text-align: center; background: white; padding: 50px; border-radius: 20px;">
+                <h2>Join Our Projects</h2>
+                <p>We are always looking for partners and skilled professionals to collaborate with GE ENGINEERING.</p>
+                <div style="margin: 30px 0;">
+                    <p><strong>Official Hotline:</strong> +880 1711-901192</p>
+                    <p><strong>Email Us:</strong> info@geengineering.com.bd</p>
+                </div>
+                <a href="tel:+8801711901192" class="btn" style="background: var(--ge-green); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px;">Contact Hotline Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="color: white;">GE ENGINEERING</h3>
+                <p>Established Since 2012</p>
+                <p class="abb-partner">In Partnership with ABB</p>
+            </div>
+            <div>
+                <h4>Head Office</h4>
+                <p>House # 137 (2nd floor), Road # 04,<br>
+                New DOHS Mohakhali, Dhaka Cantonment,<br>
+                Dhaka-1206, Bangladesh.</p>
+            </div>
+            <div>
+                <h4>Contact Details</h4>
+                <p>Hotline: +880 1711-901192</p>
+                <p>CEO: +880 1710-935505</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; opacity: 0.6; font-size: 0.8rem;">
+            &copy; 2026 GE ENGINEERING. All rights reserved. British English Professional Edition.
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
